@@ -1,1 +1,3 @@
 # ROR-SARTHAK-SOLUTION
+
+This repository contains a Ruby on Rails application that demonstrates the power and flexibility of the Rails framework. The application follows the Model-View-Controller (MVC) architecture to organize and structure the code. It integrates seamlessly with databases such as PostgreSQL, MySQL, and SQLite. This project includes features like user authentication, RESTful APIs, and a fully functional front-end and back-end, optimized through the Rails asset pipeline. The goal of this repository is to provide a robust foundation for web development projects and showcase best practices for building scalable, maintainable web applications using Ruby on Rails
