@@ -1,0 +1,31 @@
+<div class="input-group mb-3">
+  <%= form_with url: stores_path, method: :get, local: true do |form| %>
+    <%= form.text_field :query, placeholder: "Search by name or address", class: "form-control" %>
+    <button class="btn btn-outline-secondary" type="submit">Search</button>
+  <% end %>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Store Name</th>
+      <th>Address</th>
+      <th>Average Rating</th>
+      <th>My Rating</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @stores.each do |store| %>
+      <tr>
+        <td><%= store.name %></td>
+        <td><%= store.address %></td>
+        <td><%= store.calculate_average_rating %></td>
+        <td><%= store.ratings.find_by(user_id: current_user.id)&.score || "Not Rated" %></td>
+        <td>
+          <%= link_to "Rate", new_rating_path(store_id: store.id), class: "btn btn-sm btn-primary" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
